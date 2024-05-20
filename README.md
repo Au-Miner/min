@@ -1,6 +1,6 @@
 # Min
 
-中文见[README_CHI](static/README_CHI)
+中文见[README_CHI](static/README_CHI.md)
 
 ## What is Min
 Min is not a tool for finding the minimum value (x
