@@ -1,6 +1,6 @@
 go 1.21.8
 
 use (
-	./jin
-	./jin_server
+	./min
+	./min_server
 )

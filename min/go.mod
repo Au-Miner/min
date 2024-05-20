@@ -1,4 +1,4 @@
-module jin
+module min
 
 go 1.21.8
 

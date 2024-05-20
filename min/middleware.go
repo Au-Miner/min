@@ -1,4 +1,4 @@
-package jin
+package min
 
 import (
 	"fmt"
@@ -38,7 +38,7 @@ func Recovery() HandlerFunc {
 			if err := recover(); err != nil {
 				message := fmt.Sprintf("%s", err)
 				log.Printf("%s\n\n", trace(message))
-				c.Fail(http.StatusInternalServerError, fmt.Sprintf("jin Internal Server Error\n%s", trace(message)))
+				c.Fail(http.StatusInternalServerError, fmt.Sprintf("min Internal Server Error\n%s", trace(message)))
 			}
 		}()
 

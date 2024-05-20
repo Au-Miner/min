@@ -1,4 +1,4 @@
-package jin
+package min
 
 import (
 	"fmt"

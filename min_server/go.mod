@@ -1,4 +1,4 @@
-module jin_server
+module min_server
 
 go 1.21.8
 

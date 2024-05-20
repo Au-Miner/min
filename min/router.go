@@ -1,4 +1,4 @@
-package jin
+package min
 
 import (
 	"fmt"
@@ -29,10 +29,14 @@ func (r *router) addRoute(method string, pattern string, handlers []HandlerFunc)
 	r.roots[method].insert(handlers, pattern, parts, 0)
 }
 
+type ExampleRequest struct {
+	Name string `json:"key"`
+}
+
 func (r *router) handle(c *Context) {
 	n, params := r.getRoute(c.Method, c.Path)
 	if n == nil {
-		c.String(http.StatusNotFound, "GOFLISH 404 NOT FOUND: %s\n", c.Path)
+		c.String(http.StatusNotFound, "JIN 404 NOT FOUND: %s\n", c.Path)
 		return
 	}
 	c.Params = params

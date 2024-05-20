@@ -1,4 +1,4 @@
-package jin
+package min
 
 import (
 	"reflect"
@@ -28,13 +28,13 @@ func TestParsePattern(t *testing.T) {
 
 func TestGetRoute(t *testing.T) {
 	r := newTestRouter()
-	n, ps := r.getRoute("GET", "/hello/jin")
+	n, ps := r.getRoute("GET", "/hello/min")
 
 	assert.NotNil(t, n, "nil shouldn't be returned")
 	assert.Equal(t, "/hello/:name", n.pattern, "should match /hello/:name")
-	assert.Equal(t, "jin", ps["name"], "name should be equal to 'jin'")
+	assert.Equal(t, "min", ps["name"], "name should be equal to 'min'")
 
-	n, _ = r.getRoute("GET", "/hello/jin/aaa")
+	n, _ = r.getRoute("GET", "/hello/min/aaa")
 	assert.Nil(t, n, "nil shouldn't be returned")
 }
 

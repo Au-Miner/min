@@ -1,11 +1,10 @@
-package jin
+package min
 
 import (
 	"log"
 	"net/http"
 )
 
-// HandlerFunc defines the request handler used by gee
 type HandlerFunc func(*Context)
 
 type HandlerChain []HandlerFunc
@@ -17,21 +16,17 @@ type RouterGroup struct {
 	engine      *Engine      // all groups share a Engine instance
 }
 
-// Engine implement the interface of ServeHTTP
 type Engine struct {
 	*RouterGroup
-
 	router *router
 	groups []*RouterGroup
 }
 
-// New is the constructor of gee.Engine
 func New() *Engine {
 	engine := &Engine{
 		router: newRouter(),
 		groups: make([]*RouterGroup, 0),
 	}
-
 	engine.RouterGroup = &RouterGroup{engine: engine}
 	return engine
 }
@@ -53,7 +48,6 @@ func (group *RouterGroup) Group(prefix string, handlers ...HandlerFunc) *RouterG
 		engine:      group.engine,
 		middlewares: handlers,
 	}
-
 	group.engine.groups = append(group.engine.groups, newGroup)
 	return newGroup
 }
@@ -67,7 +61,6 @@ func (group *RouterGroup) getMiddleware() HandlerChain {
 	if group.parent == nil {
 		return make(HandlerChain, 0)
 	}
-
 	handlers := group.parent.getMiddleware()
 	handlers = append(handlers, group.middlewares...)
 	return handlers
