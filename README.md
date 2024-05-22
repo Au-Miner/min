@@ -10,7 +10,8 @@ Min is a lightweight, simplified version of the Gin framework. Min focuses on pe
 Min implements most of the basic functions of Gin, including routing, middleware, request/response handling, error handling, and route grouping, for quickly building HTTP services.
 
 ## Status
-Currently, Min is suitable for learning and small projects, and its performance and stability have been verified in MinerDB.
+Currently, Min is suitable for learning and small projects, and its performance and stability have been verified in
+[MinerDB](https://github.com/Au-Miner/minerdb).
 
 ## Design overview
 ![Min.png](static/Min.png)

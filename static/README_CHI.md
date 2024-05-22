@@ -8,7 +8,8 @@ Min是一个轻量级、简化版本的Gin轮子，Min专注于性能和简单�
 Min实现了Gin的大部分基础功能，包括路由、中间件、请求/响应处理、错误处理、路由组等，用于快速搭建HTTP服务
 
 ## Status
-目前Min适用于学习和小型项目，其中性能和稳定性已经在MinerDB中得到了验证
+目前Min适用于学习和小型项目，其中性能和稳定性已经在
+[MinerDB](https://github.com/Au-Miner/minerdb) 中得到了验证
 
 ## Design overview
 ![Min.png](Min.png)
